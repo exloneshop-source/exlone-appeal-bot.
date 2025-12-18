@@ -7,7 +7,8 @@ professional WhatsApp appeal messages (NO spamming, NO automation abuse).
 Author: EXLONE
 Usage: python exlone_appeal_bot.py
 """
-
+import webbrowser
+import urllib.parse
 import os
 import json
 import datetime
