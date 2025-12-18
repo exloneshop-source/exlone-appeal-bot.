@@ -193,3 +193,18 @@ def main():
 
 if __name__ == "__main__":
     main()
+def open_gmail_draft(appeal_text):
+    recipient = "support@whatsapp.com"
+    subject = "WhatsApp Account Review Request"
+
+    body = appeal_text
+    params = {
+        "to": recipient,
+        "subject": subject,
+        "body": body
+    }
+
+    query = urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
+    mailto_link = f"mailto:?{query}"
+
+    webbrowser.open(mailto_link)
