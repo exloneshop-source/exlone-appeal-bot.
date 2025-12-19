@@ -171,7 +171,6 @@ def main():
     print("-" * 55)
     print(appeal_text)
     send_email = input("\nOpen Gmail with this appeal pre-written? (y/n): ").lower()
-
 if send_email == "y":
     print("Opening Gmail draft...")
     open_gmail_draft(appeal_text)
