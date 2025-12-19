@@ -7,6 +7,7 @@ professional WhatsApp appeal messages (NO spamming, NO automation abuse).
 Author: EXLONE
 Usage: python exlone_appeal_bot.py
 """
+
 import webbrowser
 import urllib.parse
 import os
@@ -169,6 +170,13 @@ def main():
     print(" GENERATED APPEAL MESSAGE (PREVIEW) " if preview else " GENERATED APPEAL MESSAGE ")
     print("-" * 55)
     print(appeal_text)
+    send_email = input("\nOpen Gmail with this appeal pre-written? (y/n): ").lower()
+
+if send_email == "y":
+    print("Opening Gmail draft...")
+    open_gmail_draft(appeal_text)
+else:
+    print("You chose not to open Gmail.")
 
     print("\nSubmit your appeal here:")
     print(WHATSAPP_SUPPORT[platform])
@@ -193,6 +201,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
 def open_gmail_draft(appeal_text):
     recipient = "support@whatsapp.com"
     subject = "WhatsApp Account Review Request"
